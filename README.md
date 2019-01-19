@@ -1,6 +1,6 @@
 # Converter
 
-This package allows you to convert Excel files into JSON format.
+This package allows you to convert Microsoft Excel files to a Dictionary type. So, with that, you may have a JSON code.
 
 ## Installation
 
