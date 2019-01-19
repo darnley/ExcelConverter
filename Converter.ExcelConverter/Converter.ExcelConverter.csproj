@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Darnley Costa &lt;darnleycosta@gmail.com&gt;</Authors>
+    <Product>Converter</Product>
+    <Description>Convert Excel files into dictionary format.</Description>
+    <PackageLicenseUrl>https://darnley.mit-license.org/2019</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/Darnley/ExcelConverter</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
