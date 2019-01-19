@@ -9,6 +9,16 @@ namespace Converter.ExcelConverter.Extensions
 {
     public static class DataTableCollectionExtensions
     {
+        private static Dictionary<string, ICollection<Dictionary<string, object>>> Initialize(this Dictionary<string, ICollection<Dictionary<string, object>>> dataTableCollection, long quantity)
+        {
+            for (long i = 0; i < quantity; i++)
+            {
+                dataTableCollection.Add(null, null);
+            }
+
+            return dataTableCollection;
+        }
+
         /// <summary>
         /// Process a sheet collection to transform it to a dictionary object
         /// </summary>
@@ -36,8 +46,7 @@ namespace Converter.ExcelConverter.Extensions
                 // It is important because we should know how many columns we have
                 DataColumnCollection columns = sheet.Columns;
 
-                // Iterate each row in the current sheet
-                foreach (DataRow row in sheet.Rows)
+                Parallel.For(0, sheet.Rows.Count, (currentRowIndex) =>
                 {
                     // Instantiate a dictionary to store the data from each row as key<string> and value<string>
                     var rowDictionary = new Dictionary<string, object>();
@@ -46,14 +55,14 @@ namespace Converter.ExcelConverter.Extensions
                     for (int columnIndex = 0; columnIndex < columns.Count; columnIndex++)
                     {
                         string columnName = sheet.Rows[0][columnIndex].ToString();
-                        object columnValue = Convert.ChangeType(row[columnIndex], useDataTableTypes ? columns[columnIndex].DataType : Type.GetType("string"));
+                        object columnValue = Convert.ChangeType(sheet.Rows[currentRowIndex][columnIndex], useDataTableTypes ? columns[columnIndex].DataType : Type.GetType("string"));
 
                         rowDictionary.Add(columnName, columnValue);
                     }
 
                     // Add the row values to the collection of the current sheet
                     temporary.Add(rowDictionary);
-                }
+                });
 
                 // Add the sheet values to the collection of sheets
                 // It uses the TryAdd according to concurrent programming
