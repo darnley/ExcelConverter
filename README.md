@@ -41,6 +41,18 @@ Content-Disposition: form-data; name="file"; filename="C:\file_excel.xlsx"
 
 Pay attention to the `Content-Disposition` name. The default request method uses the `file` parameter; so, you should put your [Microsoft Excel](https://products.office.com/excel) file into it.
 
+#### Calling from Console application
+
+By default, there is a basic console application you can use to sendn the Microsoft Excel file and write the JSON result in a file in the sabe directory of Excel's file.
+
+To do this, execute the console application (EXE) passing the Microsoft Excel file's full path as parameter.
+
+```
+Converter.Presentation.Console.exe "C:\file_excel.xlsx"
+```
+
+After processing, it will create an `.json` file in the same directory of `.xlsx` file. The `.json` file will have the same name of `.xlsx` file.
+
 ## Compatibility
 
 In the version 1.0, this package only supports XLSX files.
