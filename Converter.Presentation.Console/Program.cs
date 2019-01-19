@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Diagnostics;
 
 namespace Converter.Presentation.Console
 {
@@ -9,6 +10,10 @@ namespace Converter.Presentation.Console
     {
         static int Main(string[] args)
         {
+            System.Console.WriteLine($"[{DateTime.UtcNow.ToString("o")}] Processing...");
+
+            Stopwatch operationTime = Stopwatch.StartNew();
+
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
             // Test if input arguments were supplied:
@@ -39,6 +44,10 @@ namespace Converter.Presentation.Console
                     serializer.Serialize(file, result);
                 }
             }
+
+            operationTime.Stop();
+            
+            System.Console.WriteLine($"[{DateTime.UtcNow.ToString("o")}] Finished in {operationTime.ElapsedMilliseconds} milliseconds");
 
             return 0;
         }
