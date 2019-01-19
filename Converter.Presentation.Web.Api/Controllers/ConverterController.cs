@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using Converter.ExcelConverter.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Converter.Presentation.Web.Api.Controllers
 {
@@ -10,17 +12,31 @@ namespace Converter.Presentation.Web.Api.Controllers
     {
         // GET api/converter?path={string}
         [HttpGet]
-        public ActionResult Get([FromQuery] string path, [FromServices] IExcelConverterService service)
+        public async Task<ActionResult> GetAsync(IFormFile file, [FromServices] IExcelConverterService service)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            using (var stream = System.IO.File.Open(path, FileMode.Open, FileAccess.Read))
+            if (file == null)
             {
-                return Ok(service.ConvertExcelToDictionary(stream));
+                return BadRequest(new string[] { "There is no file in 'file' parameter in body." });
             }
+            
+            string temporaryFilePath = Path.GetTempFileName();
+
+            if (file.Length > 0)
+            {
+                using (FileStream stream = new FileStream(temporaryFilePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+
+                    return Ok(service.ConvertExcelToDictionary(stream));
+                }
+            }
+
+            return BadRequest(new string[] { "The provided file is zero-byte length." });
         }
     }
 }
