@@ -1,6 +1,6 @@
 # ExcelConverter
 
-This package allows you to convert Microsoft Excel files to a Dictionary type. So, with that, you may have a JSON code.
+This package allows you to convert [Microsoft Excel](https://products.office.com/excel) files to a Dictionary type. So, with that, you may have a JSON code.
 
 ## Installation
 
@@ -24,6 +24,26 @@ If you would like to use it directly into a `DataTableCollection` object, use th
 var result = dataSet.Tables.AsDictionary();
 // Dictionary<string, ICollection<Dictionary<string, object>>>
 ```
+
+#### Calling from Web API
+
+By default, there is a basic Web API project you can use to send the Microsoft Excel file and receive the JSON code in response's body.
+
+To do this, make a call as the following.
+
+```
+GET /api/converter HTTP/1.1
+Host: localhost:5001
+Content-Type: multipart/form-data;
+
+Content-Disposition: form-data; name="file"; filename="C:\file_excel.xlsx"
+```
+
+Pay attention to the `Content-Disposition` name. The default request method uses the `file` parameter; so, you should put your [Microsoft Excel](https://products.office.com/excel) file into it.
+
+## Compatibility
+
+In the version 1.0, this package only supports XLSX files.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
