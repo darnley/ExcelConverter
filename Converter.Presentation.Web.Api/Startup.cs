@@ -28,7 +28,7 @@ namespace Converter.Presentation.Web.Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddScoped<IExcelConverterService, ExcelConverterService>();
+            services.AddSingleton<IExcelConverterService, ExcelConverterService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
