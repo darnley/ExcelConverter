@@ -8,7 +8,7 @@ The main package that have the code is [.NET Standard 2.0](https://docs.microsof
 
 ## Usage
 
-Use the method `Converter.ExcelConverter.Services.ConvertExcelToDictionary()`. It receives an `Stream` that must contains the Excel file.
+Use the method `Converter.ExcelConverter.Services.ConvertExcelToDictionary()`. It receives a `Stream` that must contains the Microsoft Excel file (XLSX).
 
 ```csharp
 using (var stream = System.IO.File.Open("C:/file.xlsx", FileMode.Open, FileAccess.Read))
@@ -18,7 +18,7 @@ using (var stream = System.IO.File.Open("C:/file.xlsx", FileMode.Open, FileAcces
 }
 ```
 
-If you would like to use into a `DataTableCollection` directly, use the [extension method](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) `Converter.ExcelConverter.Extensions.AsDictionary()`. In this case, as you are using the [extension method](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods), you just have to call it as a `DataTableCollection` method.
+If you would like to use it directly into a `DataTableCollection` object, use the [extension method](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) `Converter.ExcelConverter.Extensions.AsDictionary()`. In this case, once you are using the [extension method](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods), you just have to call it as a `DataTableCollection` method.
 
 ```csharp
 var result = dataSet.Tables.AsDictionary();
