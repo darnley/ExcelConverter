@@ -3,16 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converter.ExcelConverter", "Converter.ExcelConverter\Converter.ExcelConverter.csproj", "{EC6E9C34-BD26-4707-8F8B-5BBE591121FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.ExcelConverter", "Converter.ExcelConverter\Converter.ExcelConverter.csproj", "{EC6E9C34-BD26-4707-8F8B-5BBE591121FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converter.Presentation.Console", "Converter.Presentation.Console\Converter.Presentation.Console.csproj", "{22CFD454-F18B-4267-8239-65940C27CF27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.Presentation.Console", "Converter.Presentation.Console\Converter.Presentation.Console.csproj", "{22CFD454-F18B-4267-8239-65940C27CF27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converter.Presentation.Web.Api", "Converter.Presentation.Web.Api\Converter.Presentation.Web.Api.csproj", "{5AFC6313-772D-4571-A184-8A1E0BA05A93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.Presentation.Web.Api", "Converter.Presentation.Web.Api\Converter.Presentation.Web.Api.csproj", "{5AFC6313-772D-4571-A184-8A1E0BA05A93}"
 EndProject
 Global
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -58,5 +55,11 @@ Global
 		{5AFC6313-772D-4571-A184-8A1E0BA05A93}.Release|x64.Build.0 = Release|Any CPU
 		{5AFC6313-772D-4571-A184-8A1E0BA05A93}.Release|x86.ActiveCfg = Release|Any CPU
 		{5AFC6313-772D-4571-A184-8A1E0BA05A93}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B64E4DBD-D818-4DE1-A605-1C67FDA1C50F}
 	EndGlobalSection
 EndGlobal
