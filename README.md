@@ -47,7 +47,7 @@ By default, there is a basic console application you can use to sendn the Micros
 
 To do this, execute the console application (EXE) passing the Microsoft Excel file's full path as parameter.
 
-```
+```batch
 Converter.Presentation.Console.exe "C:\file_excel.xlsx"
 ```
 
