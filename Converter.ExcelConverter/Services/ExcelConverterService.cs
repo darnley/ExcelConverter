@@ -37,6 +37,8 @@ namespace Converter.ExcelConverter.Services
         {
             using (var stream = fileStream)
             {
+                System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
                 using (var reader = ExcelReaderFactory.CreateReader(stream))
                 {
                     return reader.AsDataSet().Tables.AsDictionary();
