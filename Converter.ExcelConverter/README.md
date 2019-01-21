@@ -2,7 +2,7 @@
 This package will help you to convert your [Microsoft Excel](https://products.office.com/excel) data-only files to a [Dictionary](https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2) and, if you would like that, convert to a [JSON](https://en.wikipedia.org/wiki/JSON), [XML](https://en.wikipedia.org/wiki/XML) or bind to your model.
 
 ## Installation
-Use the [`Holbor.Converter.Excel` package](https://www.nuget.org/packages/Holbor.Converter.Excel)
+Use the [`Holbor.Converter.Excel` package](https://www.nuget.org/packages/Holbor.Converter.Excel). Otherwise, you can compile this project as-is, because it is an .NET Standard 2.0 project.
 
 ## Usage
 This package is ready for your dependency injector, because it already has an interface.
