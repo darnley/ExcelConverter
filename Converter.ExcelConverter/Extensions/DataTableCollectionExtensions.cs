@@ -9,16 +9,6 @@ namespace Converter.ExcelConverter.Extensions
 {
     public static class DataTableCollectionExtensions
     {
-        private static Dictionary<string, ICollection<Dictionary<string, object>>> Initialize(this Dictionary<string, ICollection<Dictionary<string, object>>> dataTableCollection, long quantity)
-        {
-            for (long i = 0; i < quantity; i++)
-            {
-                dataTableCollection.Add(null, null);
-            }
-
-            return dataTableCollection;
-        }
-
         /// <summary>
         /// Process a sheet collection to transform it to a dictionary object
         /// </summary>
