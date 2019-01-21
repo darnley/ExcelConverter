@@ -14,8 +14,6 @@ namespace Converter.Presentation.Console
 
             Stopwatch operationTime = Stopwatch.StartNew();
 
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-
             // Test if input arguments were supplied:
             if (args.Length == 0)
             {
