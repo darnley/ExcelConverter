@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Holbor.Converter.Excel.Extensions;
 
-namespace Holbor.Converter.Excel
+namespace Holbor.Converter.Excel.Services
 {
     public interface IExcelConverterService
     {
