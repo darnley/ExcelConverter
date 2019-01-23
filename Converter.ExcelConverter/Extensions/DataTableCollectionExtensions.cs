@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Converter.ExcelConverter.Extensions
+namespace Holbor.Converter.Excel.Extensions
 {
     public static class DataTableCollectionExtensions
     {

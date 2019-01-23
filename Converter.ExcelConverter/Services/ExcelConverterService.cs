@@ -1,9 +1,9 @@
 ﻿using ExcelDataReader;
 using System.Collections.Generic;
 using System.IO;
-using Converter.ExcelConverter.Extensions;
+using Holbor.Converter.Excel.Extensions;
 
-namespace Converter.ExcelConverter.Services
+namespace Holbor.Converter.Excel
 {
     public interface IExcelConverterService
     {
